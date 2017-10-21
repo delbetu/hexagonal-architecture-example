@@ -13,4 +13,8 @@ module DB
       raise NoAdapterFound, adapter_key
     end
   end
+
+  def self.load_fake_data
+    DB::DMSchema::Rate.create(description: 'Sample rate', value: 1.5) # add data
+  end
 end
